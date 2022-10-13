@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        viteze(60000, 1, 0, 0);
         text();
         System.out.println(" ");
         face();
@@ -38,5 +39,15 @@ public class Main {
     static float inchToMeters(float x){
         float conv = x * 0.0254f;
         return conv;
+    }
+    static void viteze(float dmetri, int ore, int min, int sec){
+        //float vitMperS = dmetri / (sec + min * 60 + ore * 3600);
+        float vitKmperH = (dmetri / 1000f) / (ore + min / 60f + sec / 3600f);
+        float vitMperS = vitKmperH / 3.6f;
+        float vitMperH = vitKmperH / 1.609f;
+        System.out.println("Viteza in metri pe secunda este: " + vitMperS);
+        System.out.println("Viteza in km pe ora este: " + vitKmperH);
+        System.out.println("Viteza in mile pe ora este: " + vitMperH);
+
     }
 }
